@@ -1,0 +1,205 @@
+/* Global Styles and CSS Variables - Cyberpunk Kali OS Theme */
+:root {
+  /* Modern Kali OS Color Scheme - Cyberpunk Aesthetic */
+  --bg-primary: #0c0f14;
+  --bg-secondary: #141a23;
+  --bg-panel: rgba(20, 26, 35, 0.7);
+  --bg-glass: rgba(20, 26, 35, 0.5);
+
+  /* Neon Accent Colors */
+  --neon-cyan: #2ee7ff;
+  --neon-purple: #9d4edd;
+  --electric-blue: #4cc9f0;
+  --neon-magenta: #f72585;
+  --neon-lime: #2bd576;
+  --neon-orange: #ff6b35;
+
+  /* Text Colors */
+  --text-primary: #eaeaea;
+  --text-secondary: #a8b2d1;
+  --text-dim: #6b7280;
+  --text-cyan: #2ee7ff;
+  --text-purple: #9d4edd;
+
+  /* Border & Glow Effects */
+  --border-cyan: rgba(46, 231, 255, 0.6);
+  --border-purple: rgba(157, 78, 221, 0.6);
+  --glow-cyan: 0 0 10px rgba(46, 231, 255, 0.5), 0 0 20px rgba(46, 231, 255, 0.3);
+  --glow-purple: 0 0 10px rgba(157, 78, 221, 0.5), 0 0 20px rgba(157, 78, 221, 0.3);
+  --glow-blue: 0 0 10px rgba(76, 201, 240, 0.5);
+
+  /* Typography */
+  --font-mono: 'Fira Code', 'JetBrains Mono', 'Courier New', 'Consolas', monospace;
+  --font-size-base: 16px;
+  --font-size-sm: 14px;
+  --font-size-lg: 18px;
+
+  /* Spacing */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+
+  /* Animation */
+  --transition-speed: 0.3s;
+  --transition-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+  font-size: var(--font-size-base);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Selection */
+::selection {
+  background-color: var(--neon-cyan);
+  color: var(--bg-primary);
+}
+
+::-moz-selection {
+  background-color: var(--neon-cyan);
+  color: var(--bg-primary);
+}
+
+/* Scrollbar Styling - Cyberpunk */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+  border-left: 1px solid var(--border-cyan);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--neon-cyan), var(--neon-purple));
+  border-radius: 5px;
+  box-shadow: var(--glow-cyan);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, var(--electric-blue), var(--neon-magenta));
+  box-shadow: var(--glow-purple);
+}
+
+/* Links - Neon Glow */
+a {
+  color: var(--neon-cyan);
+  text-decoration: none;
+  transition: all var(--transition-speed) var(--transition-smooth);
+  position: relative;
+}
+
+a:hover {
+  color: var(--electric-blue);
+  text-shadow: var(--glow-cyan);
+}
+
+a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--neon-cyan), var(--neon-purple));
+  transition: width var(--transition-speed) var(--transition-smooth);
+}
+
+a:hover::after {
+  width: 100%;
+}
+
+/* Headings - Cyberpunk Glow */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: bold;
+  margin-bottom: var(--spacing-md);
+  background: linear-gradient(135deg, var(--neon-cyan), var(--neon-purple));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(0 0 10px rgba(46, 231, 255, 0.3));
+}
+
+/* Utility Classes */
+.text-dim {
+  color: var(--text-dim);
+}
+
+.text-bright {
+  color: var(--text-primary);
+  text-shadow: 0 0 5px var(--terminal-shadow);
+}
+
+.mb-1 {
+  margin-bottom: var(--spacing-sm);
+}
+
+.mb-2 {
+  margin-bottom: var(--spacing-md);
+}
+
+.mb-3 {
+  margin-bottom: var(--spacing-lg);
+}
+
+.mt-1 {
+  margin-top: var(--spacing-sm);
+}
+
+.mt-2 {
+  margin-top: var(--spacing-md);
+}
+
+.mt-3 {
+  margin-top: var(--spacing-lg);
+}
+
+/* Responsive Typography */
+@media (max-width: 768px) {
+  :root {
+    --font-size-base: 14px;
+    --font-size-sm: 12px;
+    --font-size-lg: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --font-size-base: 13px;
+    --font-size-sm: 11px;
+    --font-size-lg: 15px;
+  }
+}
