@@ -17,18 +17,18 @@
 
 ## 🎯 Overview
 
-SECTION-404 is a cutting-edge cybersecurity terminal interface inspired by Kali Linux, featuring a modern cyberpunk aesthetic with neon cyan and purple themes. Built with React and featuring advanced security mechanisms including time-based OTP authentication and cipher text encryption.
+SECTION-404 is a cutting-edge cybersecurity terminal interface inspired by the aesthetics of **Kali Linux** and cyberpunk culture. It creates a "hacker-style" experience right in the browser, featuring a neon cyan and purple theme, glassmorphism effects, and authentic terminal interactions.
 
 ### ✨ Key Features
 
-- 🔐 **Secure Vault System** - Time-based OTP authentication (60-second rotation)
-- 🔒 **Cipher Text Encryption** - ROT13 encryption with hover-to-reveal functionality
-- 🎨 **Cyberpunk UI** - Glassmorphism effects with neon cyan/purple gradients
-- 🛸 **Dynamic Security Names** - Vault name changes every minute (10 variations)
-- 🔑 **Code Generator** - Dedicated page for security code generation
-- 📱 **Fully Responsive** - Optimized for mobile, tablet, and desktop
-- ⚡ **Terminal Animations** - Typing effects, cursor blink, and smooth transitions
-- 🐺 **Custom Branding** - Black wolf logo and SECTION-404 identity
+- 💻 **Interactive Terminal** - A functional terminal on the home page where commands like `ls`, `whoami`, `date`, and `help` actually work.
+- 🔐 **Secure Vault System** - A high-security area protected by a **Time-Based OTP (TOTP)** system. The vault name itself changes every 60 seconds (e.g., BLACKBOX, ZERO-DAY, GHOST-PROTOCOL).
+- 🕵️ **Code Generator** - A dedicated tool to generate the 60-second rotating access codes needed to enter the vault.
+- 🛸 **Antogravity Dashboard** - A futuristic command center with glowing "glass" cards, real-time system widgets (CPU/RAM usage), and detailed system logs.
+- 🕶️ **Cipher Text Encryption** - Sensitive information is "encrypted" using ROT13 and only reveals itself when you hover over it or touch it on mobile.
+- 📱 **Fully Responsive** - Works seamlessly on desktops, laptops, tablets, and mobile phones with a layout that adapts to any screen size.
+- 🎨 **Cyberpunk UI** - Glassmorphism effects with neon cyan/purple gradients and CRT monitor scanlines.
+- ⚡ **Terminal Animations** - Typing effects, cursor blink, and smooth transitions.
 
 ---
 
@@ -302,7 +302,10 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ![Cybersecurity](https://img.shields.io/badge/Cybersecurity-Terminal-00ff66?style=flat-square)
 ![Status](https://img.shields.io/badge/Status-Active-2ee7ff?style=flat-square)
 
-</div>#   s e c t i o n - 4 0 4  
- #   s e c t i o n - 4 0 4  
- #   s e c t i o n - 4 0 4  
+</div>#   s e c t i o n - 4 0 4 
+ 
+ #   s e c t i o n - 4 0 4 
+ 
+ #   s e c t i o n - 4 0 4 
+ 
  
