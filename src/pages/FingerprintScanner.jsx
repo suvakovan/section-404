@@ -109,15 +109,15 @@ const FingerprintScanner = () => {
                             <div style={{
                                 width: `${scanProgress}%`,
                                 height: '100%',
-                                background: 'var(--terminal-green)',
-                                boxShadow: '0 0 10px var(--terminal-green)',
+                                background: 'var(--neon-lime)',
+                                boxShadow: '0 0 10px var(--neon-lime)',
                                 transition: 'width 0.1s linear'
                             }}></div>
                         </div>
 
                         <div style={{
                             marginTop: '0.8rem',
-                            color: 'var(--terminal-dim)',
+                            color: 'var(--text-dim)',
                             fontFamily: 'monospace',
                             fontSize: '0.9rem'
                         }}>
