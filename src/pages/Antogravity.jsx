@@ -94,6 +94,13 @@ const SecureVault = () => {
             description: 'Infrastructure setup',
             icon: '⚙️',
             status: 'idle'
+        },
+        {
+            id: 'uplink',
+            title: 'SATELLITE UPLINK',
+            description: 'Global comms relay',
+            icon: '🛰️',
+            status: 'active'
         }
     ];
 

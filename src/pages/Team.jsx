@@ -12,7 +12,7 @@ const Team = () => {
 
     const teamMembers = [
         {
-            name: 'Alex "Shadow" Chen',
+            name: 'Suvakovan "Shadow" Chen',
             role: 'Chief Security Officer',
             specialty: 'Penetration Testing & Red Team Operations',
             skills: ['Network Security', 'Exploit Development', 'Social Engineering']

@@ -7,6 +7,9 @@ import Services from './pages/Services';
 import Contact from './pages/Contact';
 import Antogravity from './pages/Antogravity';
 import CodeGenerator from './pages/CodeGenerator';
+import VaultLogin from './pages/VaultLogin';
+import VaultPassword from './pages/VaultPassword';
+import FingerprintScanner from './pages/FingerprintScanner';
 import NotFound from './pages/NotFound';
 import './styles/index.css';
 import './styles/Terminal.css';
@@ -19,10 +22,12 @@ import './styles/animations.css';
 function App() {
   return (
     <Router>
-      <Terminal title="root@kali: ~">
+      <Terminal title="Apex@kali: ~">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/vault" element={<Antogravity />} />
+          <Route path="/vault" element={<VaultLogin />} />
+          <Route path="/vault-scan" element={<FingerprintScanner />} />
+          <Route path="/vault-password" element={<VaultPassword />} />
           <Route path="/antogravity" element={<Antogravity />} />
           <Route path="/code-generator" element={<CodeGenerator />} />
           <Route path="/team" element={<Team />} />
