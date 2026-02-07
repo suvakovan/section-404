@@ -6,7 +6,7 @@ import Team from './pages/Team';
 import Services from './pages/Services';
 import Contact from './pages/Contact';
 import Antogravity from './pages/Antogravity';
-import CodeGenerator from './pages/CodeGenerator';
+
 import VaultLogin from './pages/VaultLogin';
 import VaultPassword from './pages/VaultPassword';
 import FingerprintScanner from './pages/FingerprintScanner';
@@ -29,7 +29,7 @@ function App() {
           <Route path="/vault-scan" element={<FingerprintScanner />} />
           <Route path="/vault-password" element={<VaultPassword />} />
           <Route path="/antogravity" element={<Antogravity />} />
-          <Route path="/code-generator" element={<CodeGenerator />} />
+
           <Route path="/team" element={<Team />} />
           <Route path="/services" element={<Services />} />
           <Route path="/contact" element={<Contact />} />

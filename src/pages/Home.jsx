@@ -115,9 +115,7 @@ Navigation:
                         <Link to="/vault" className="nav-link">
                             🔐 Secure Vault
                         </Link>
-                        <Link to="/code-generator" className="nav-link">
-                            🔑 Code Generator
-                        </Link>
+
                         <Link to="/team" className="nav-link">
                             📁 Team
                         </Link>

@@ -46,31 +46,27 @@ const FingerprintScanner = () => {
                     padding: '2rem'
                 }}>
 
-                    {/* Cyber Fingerprint SVG */}
+                    {/* Realistic Fingerprint Image */}
                     <div className="fingerprint-container" style={{
                         position: 'relative',
                         width: '150px',
-                        height: '150px',
-                        marginBottom: '2rem'
+                        height: '180px',
+                        marginBottom: '2rem',
+                        display: 'flex',
+                        justifyContent: 'center',
+                        alignItems: 'center'
                     }}>
-                        <svg viewBox="0 0 100 100" className="fingerprint-svg" style={{
-                            width: '100%',
-                            height: '100%',
-                            filter: 'drop-shadow(0 0 5px var(--neon-cyan))'
-                        }}>
-                            {/* Outer Ring */}
-                            <circle cx="50" cy="50" r="45" fill="none" stroke="var(--text-dim)" strokeWidth="2" strokeDasharray="10 5" opacity="0.5" />
-                            <circle cx="50" cy="50" r="45" fill="none" stroke="var(--neon-cyan)" strokeWidth="2" strokeDasharray="10 200" strokeDashoffset={-scanProgress * 3} style={{ transition: 'stroke-dashoffset 0.1s linear' }} />
-
-                            {/* Inner Arcs / Fingerprint Ridges */}
-                            <path d="M30 50 A 20 20 0 0 1 70 50" fill="none" stroke="var(--neon-cyan)" strokeWidth="3" strokeLinecap="round" opacity={scanProgress > 20 ? 1 : 0.3} />
-                            <path d="M25 60 A 25 25 0 0 1 75 60" fill="none" stroke="var(--neon-cyan)" strokeWidth="3" strokeLinecap="round" opacity={scanProgress > 40 ? 1 : 0.3} />
-                            <path d="M35 40 A 15 15 0 0 1 65 40" fill="none" stroke="var(--neon-cyan)" strokeWidth="3" strokeLinecap="round" opacity={scanProgress > 60 ? 1 : 0.3} />
-                            <path d="M40 30 A 10 10 0 0 1 60 30" fill="none" stroke="var(--neon-cyan)" strokeWidth="3" strokeLinecap="round" opacity={scanProgress > 80 ? 1 : 0.3} />
-
-                            {/* Center Core */}
-                            <circle cx="50" cy="50" r="5" fill={scanProgress === 100 ? "var(--neon-lime)" : "var(--text-dim)"} />
-                        </svg>
+                        <img
+                            src="/fingerprint.png"
+                            alt="Fingerprint Scan"
+                            style={{
+                                width: '100%',
+                                height: '100%',
+                                objectFit: 'contain',
+                                filter: `drop-shadow(0 0 10px var(--neon-cyan)) opacity(${scanProgress > 0 ? 0.8 + (scanProgress / 500) : 0.5})`,
+                                transition: 'filter 0.5s ease'
+                            }}
+                        />
 
                         {/* Scanning Line */}
                         <div style={{
