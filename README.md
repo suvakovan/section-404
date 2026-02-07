@@ -22,8 +22,8 @@ SECTION-404 is a cutting-edge cybersecurity terminal interface inspired by the a
 ### ✨ Key Features
 
 - 💻 **Interactive Terminal** - A functional terminal on the home page where commands like `ls`, `whoami`, `date`, and `help` actually work.
-- 🔐 **Secure Vault System** - A high-security area protected by a **Time-Based OTP (TOTP)** system. The vault name itself changes every 60 seconds (e.g., BLACKBOX, ZERO-DAY, GHOST-PROTOCOL).
-- 🕵️ **Code Generator** - A dedicated tool to generate the 60-second rotating access codes needed to enter the vault.
+- 🧬 **Biometric Authentication** - A realistic fingerprint scanning simulation with cyber-themed animations and "identity confirmation" sequences.
+- 🔐 **Secure Vault System** - A multi-layered security area protected by **Credentials + Biometrics + Time-Based OTP (TOTP)**.
 - 🛸 **Antogravity Dashboard** - A futuristic command center with glowing "glass" cards, real-time system widgets (CPU/RAM usage), and detailed system logs.
 - 🕶️ **Cipher Text Encryption** - Sensitive information is "encrypted" using ROT13 and only reveals itself when you hover over it or touch it on mobile.
 - 📱 **Fully Responsive** - Works seamlessly on desktops, laptops, tablets, and mobile phones with a layout that adapts to any screen size.
@@ -66,16 +66,22 @@ npm run preview
 
 ## 🔐 Security Features
 
-### 1. Time-Based Authentication
-
-Access the secure vault requires a time-based one-time password (TOTP):
-
+### 1. Multi-Factor Authentication (MFA)
+ 
+Accessing the secure vault requires passing three layers of security:
+ 
+1.  **Credential Check**: Standard username/password login.
+2.  **Biometric Scan**: Animated fingerprint verification.
+3.  **Time-Based OTP**: A rotating 60-second code.
+ 
+### 2. Time-Based One-Time Password (TOTP)
+ 
 - **Code Format**: `SEC-XXXX-XXX`
 - **Rotation**: Every 60 seconds
 - **Algorithm**: Based on current hour, minute, and day
-- **Access**: Get codes from `/code-generator` page
+- **Display**: Shown only after successful biometric scan
 
-### 2. Cipher Text System
+### 3. Cipher Text System
 
 All sensitive information appears encrypted until interaction:
 
@@ -84,7 +90,7 @@ All sensitive information appears encrypted until interaction:
 - **Visual**: Blur effect with lock/unlock icons
 - **Coverage**: All text in secure vault
 
-### 3. Dynamic Vault Names
+### 4. Dynamic Vault Names
 
 Security through obscurity with rotating vault names:
 
@@ -112,8 +118,10 @@ section-404/
 │   │   └── Cursor.jsx           # Blinking cursor
 │   ├── pages/
 │   │   ├── Home.jsx             # Landing page
+│   │   ├── VaultLogin.jsx       # Secure login entry
+│   │   ├── FingerprintScanner.jsx # Biometric scan simulation
+│   │   ├── VaultPassword.jsx    # TOTP display
 │   │   ├── Antogravity.jsx      # Secure vault (auth required)
-│   │   ├── CodeGenerator.jsx    # Security code generator
 │   │   ├── Team.jsx             # Team information
 │   │   ├── Services.jsx         # Services offered
 │   │   ├── Contact.jsx          # Contact page
@@ -163,8 +171,10 @@ section-404/
 | Route | Page | Description |
 |-------|------|-------------|
 | `/` | Home | Landing page with navigation |
-| `/vault` | Secure Vault | High-security area (requires auth) |
-| `/code-generator` | Code Generator | Get current security codes |
+| `/vault` | Secure Vault Login | Entry point for restricted area |
+| `/vault-scan` | Biometric Scan | Fingerprint verification animation |
+| `/vault-password` | Security Code | Time-based OTP display |
+| `/antogravity` | Dashboard | Main secure interface (requires code) |
 | `/team` | Team | Team information |
 | `/services` | Services | Services offered |
 | `/contact` | Contact | Contact information |
@@ -175,21 +185,33 @@ section-404/
 ## 💻 Usage
 
 ### Accessing the Secure Vault
-
-1. **Get Security Code**
-   ```
-   Navigate to: /code-generator
-   Copy the displayed code (e.g., SEC-4B2F-847)
-   ```
-
-2. **Access Vault**
+ 
+1. **Authenticate**
    ```
    Navigate to: /vault
-   Enter code in terminal prompt
-   Press Enter
+   Login with credentials: admin / s3cure
+   ```
+ 
+2. **Biometric Verification**
+   ```
+   Wait for the fingerprint scan to complete
+   Status will change to "IDENTITY CONFIRMED"
+   ```
+ 
+3. **Get Security Code**
+   ```
+   You will be redirected to the Password page
+   Click [ COPY CODE ] to grab the current TOTP
+   Click [ OPEN VAULT ]
+   ```
+ 
+4. **Enter Vault**
+   ```
+   Paste the code into the prompt
+   Press Enter to access the Antogravity Dashboard
    ```
 
-3. **Explore Encrypted Data**
+5. **Explore Encrypted Data**
    ```
    Hover over encrypted text to reveal
    Click on entry cards to view details
@@ -302,10 +324,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ![Cybersecurity](https://img.shields.io/badge/Cybersecurity-Terminal-00ff66?style=flat-square)
 ![Status](https://img.shields.io/badge/Status-Active-2ee7ff?style=flat-square)
 
-</div>#   s e c t i o n - 4 0 4 
- 
- #   s e c t i o n - 4 0 4 
- 
- #   s e c t i o n - 4 0 4 
- 
- 
+</div>
