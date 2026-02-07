@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <!-- Black Wolf Logo - SECTION-404 -->
+  <defs>
+    <filter id="wolfShadow">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feOffset in="blur" dx="1" dy="1" result="offsetBlur"/>
+      <feMerge>
+        <feMergeNode in="offsetBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Wolf silhouette in black -->
+  <g stroke="#000000" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round" filter="url(#wolfShadow)">
+    
+    <!-- Wolf head outline -->
+    <path d="M 100 60 Q 85 50 75 55 Q 70 60 72 70 L 75 85" />
+    <path d="M 100 60 Q 115 50 125 55 Q 130 60 128 70 L 125 85" />
+    
+    <!-- Wolf ears (pointed) -->
+    <path d="M 75 55 L 70 40 L 78 50" fill="#000000" opacity="0.8"/>
+    <path d="M 125 55 L 130 40 L 122 50" fill="#000000" opacity="0.8"/>
+    
+    <!-- Wolf snout -->
+    <path d="M 75 85 Q 85 95 100 98" />
+    <path d="M 125 85 Q 115 95 100 98" />
+    <path d="M 100 98 L 100 105" />
+    
+    <!-- Wolf nose -->
+    <circle cx="100" cy="108" r="3" fill="#000000"/>
+    
+    <!-- Wolf eyes -->
+    <circle cx="85" cy="75" r="3" fill="#000000"/>
+    <circle cx="115" cy="75" r="3" fill="#000000"/>
+    
+    <!-- Wolf neck and body -->
+    <path d="M 75 85 Q 70 100 65 115" />
+    <path d="M 125 85 Q 130 100 135 115" />
+    <path d="M 65 115 Q 75 125 100 130" />
+    <path d="M 135 115 Q 125 125 100 130" />
+    
+    <!-- Wolf chest -->
+    <path d="M 100 130 L 100 145" stroke-width="4"/>
+    
+    <!-- Wolf front legs -->
+    <path d="M 90 135 L 85 155 L 83 165" stroke-width="2.5"/>
+    <path d="M 110 135 L 115 155 L 117 165" stroke-width="2.5"/>
+    
+    <!-- Wolf paws -->
+    <line x1="80" y1="165" x2="86" y2="165" stroke-width="3" stroke-linecap="round"/>
+    <line x1="114" y1="165" x2="120" y2="165" stroke-width="3" stroke-linecap="round"/>
+    
+    <!-- Wolf fur details (neck) -->
+    <path d="M 80 95 L 75 105" stroke-width="1.5" opacity="0.6"/>
+    <path d="M 85 100 L 80 110" stroke-width="1.5" opacity="0.6"/>
+    <path d="M 120 95 L 125 105" stroke-width="1.5" opacity="0.6"/>
+    <path d="M 115 100 L 120 110" stroke-width="1.5" opacity="0.6"/>
+    
+    <!-- Wolf tail (curved, flowing) -->
+    <path d="M 100 145 Q 90 150 85 160 Q 80 170 75 175" stroke-width="2.5" opacity="0.8"/>
+    <path d="M 75 175 Q 70 180 65 182" stroke-width="2" opacity="0.7"/>
+    
+  </g>
+  
+</svg>

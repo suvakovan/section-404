@@ -1,0 +1,379 @@
+/* Terminal Component Styles - Cyberpunk Kali OS */
+.terminal-container {
+    min-height: 100vh;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: var(--spacing-lg);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background: radial-gradient(ellipse at top, rgba(46, 231, 255, 0.05), transparent 50%),
+        radial-gradient(ellipse at bottom, rgba(157, 78, 221, 0.05), transparent 50%);
+}
+
+.terminal-window {
+    flex: 1;
+    background: var(--bg-glass);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 2px solid transparent;
+    border-image: linear-gradient(135deg, var(--neon-cyan), var(--neon-purple), var(--electric-blue)) 1;
+    border-radius: 12px;
+    box-shadow:
+        0 0 30px rgba(46, 231, 255, 0.2),
+        0 0 60px rgba(157, 78, 221, 0.1),
+        inset 0 0 80px rgba(46, 231, 255, 0.03);
+    padding: var(--spacing-lg);
+    position: relative;
+    overflow: hidden;
+    transition: all var(--transition-speed) var(--transition-smooth);
+}
+
+.terminal-window:hover {
+    box-shadow:
+        0 0 40px rgba(46, 231, 255, 0.3),
+        0 0 80px rgba(157, 78, 221, 0.15),
+        inset 0 0 100px rgba(46, 231, 255, 0.05);
+    border-image: linear-gradient(135deg, var(--electric-blue), var(--neon-magenta), var(--neon-cyan)) 1;
+}
+
+/* Terminal Header */
+.terminal-header {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-lg);
+    padding-bottom: var(--spacing-md);
+    border-bottom: 1px solid var(--border-cyan);
+    box-shadow: 0 1px 10px rgba(46, 231, 255, 0.2);
+}
+
+.terminal-buttons {
+    display: flex;
+    gap: var(--spacing-xs);
+}
+
+.terminal-button {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 1px solid var(--border-cyan);
+    box-shadow: 0 0 5px rgba(46, 231, 255, 0.3);
+    transition: all var(--transition-speed);
+}
+
+.terminal-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 10px rgba(46, 231, 255, 0.6);
+}
+
+.terminal-button.close {
+    background: linear-gradient(135deg, #ff5555, #ff0055);
+    box-shadow: 0 0 8px rgba(255, 85, 85, 0.5);
+}
+
+.terminal-button.minimize {
+    background: linear-gradient(135deg, #ffaa00, #ff8800);
+    box-shadow: 0 0 8px rgba(255, 170, 0, 0.5);
+}
+
+.terminal-button.maximize {
+    background: linear-gradient(135deg, var(--neon-lime), var(--neon-cyan));
+    box-shadow: 0 0 8px rgba(46, 231, 255, 0.5);
+}
+
+.terminal-title {
+    flex: 1;
+    text-align: center;
+    font-size: var(--font-size-sm);
+    color: var(--text-cyan);
+    text-shadow: var(--glow-cyan);
+}
+
+/* Terminal Content */
+.terminal-content {
+    min-height: 400px;
+    overflow-y: auto;
+    padding-right: var(--spacing-sm);
+}
+
+/* Terminal Prompt */
+.terminal-prompt {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: var(--spacing-sm);
+    flex-wrap: wrap;
+}
+
+.prompt-line {
+    color: var(--text-primary);
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+.prompt-user {
+    color: var(--neon-cyan);
+    font-weight: bold;
+    text-shadow: var(--glow-cyan);
+}
+
+.prompt-path {
+    color: var(--neon-purple);
+    text-shadow: var(--glow-purple);
+}
+
+.prompt-symbol {
+    color: var(--neon-cyan);
+    margin-left: var(--spacing-xs);
+    text-shadow: var(--glow-cyan);
+}
+
+/* Terminal Output */
+.terminal-output {
+    margin-bottom: var(--spacing-md);
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+.terminal-line {
+    margin-bottom: var(--spacing-xs);
+}
+
+/* Command Input */
+.command-input-container {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-md);
+}
+
+.command-input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    color: var(--text-primary);
+    font-family: var(--font-mono);
+    font-size: var(--font-size-base);
+    outline: none;
+    padding: var(--spacing-xs);
+}
+
+.command-input::placeholder {
+    color: var(--text-dim);
+}
+
+/* Scanline Effect - Cyberpunk CRT aesthetic */
+.terminal-window::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom,
+            rgba(46, 231, 255, 0.02) 50%,
+            transparent 50%);
+    background-size: 100% 4px;
+    pointer-events: none;
+    opacity: 0.4;
+    z-index: 1;
+}
+
+.terminal-content {
+    position: relative;
+    z-index: 2;
+}
+
+/* ASCII Art - Neon Glow */
+.ascii-art {
+    background: linear-gradient(135deg, var(--neon-cyan), var(--neon-purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-size: var(--font-size-sm);
+    line-height: 1.2;
+    margin-bottom: var(--spacing-lg);
+    filter: drop-shadow(0 0 15px rgba(46, 231, 255, 0.5)) drop-shadow(0 0 25px rgba(157, 78, 221, 0.3));
+    white-space: pre;
+    overflow-x: auto;
+}
+
+/* Command List */
+.command-list {
+    list-style: none;
+    margin: var(--spacing-md) 0;
+}
+
+.command-list li {
+    margin-bottom: var(--spacing-sm);
+    padding-left: var(--spacing-md);
+}
+
+.command-list li::before {
+    content: '$ ';
+    color: var(--neon-cyan);
+    margin-right: var(--spacing-xs);
+    text-shadow: var(--glow-cyan);
+}
+
+.command-name {
+    color: var(--neon-cyan);
+    font-weight: bold;
+    text-shadow: var(--glow-cyan);
+}
+
+.command-description {
+    color: var(--text-secondary);
+    margin-left: var(--spacing-md);
+}
+
+/* Navigation Links */
+.nav-links {
+    display: flex;
+    gap: var(--spacing-lg);
+    margin: var(--spacing-lg) 0;
+    flex-wrap: wrap;
+}
+
+.nav-link {
+    color: var(--neon-cyan);
+    text-decoration: none;
+    padding: var(--spacing-sm) var(--spacing-md);
+    border: 1px solid var(--border-cyan);
+    border-radius: 8px;
+    background: var(--bg-panel);
+    backdrop-filter: blur(10px);
+    transition: all var(--transition-speed) var(--transition-smooth);
+    position: relative;
+    overflow: hidden;
+}
+
+.nav-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(46, 231, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.nav-link:hover::before {
+    left: 100%;
+}
+
+.nav-link:hover {
+    border-color: var(--neon-purple);
+    background: linear-gradient(135deg, rgba(46, 231, 255, 0.1), rgba(157, 78, 221, 0.1));
+    box-shadow: var(--glow-cyan);
+    transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .terminal-container {
+        padding: var(--spacing-md);
+    }
+
+    .terminal-window {
+        padding: var(--spacing-md);
+    }
+}
+
+@media (max-width: 768px) {
+    .terminal-container {
+        padding: var(--spacing-sm);
+        min-height: 100vh;
+    }
+
+    .terminal-window {
+        padding: var(--spacing-md);
+        border-radius: 8px;
+        border-width: 1px;
+    }
+
+    .terminal-content {
+        min-height: auto;
+        padding: var(--spacing-sm);
+    }
+
+    .ascii-art {
+        font-size: 8px;
+        line-height: 1.2;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+
+    .nav-link {
+        width: 100%;
+        text-align: center;
+        padding: var(--spacing-md);
+    }
+
+    .terminal-title {
+        font-size: var(--font-size-sm);
+    }
+}
+
+@media (max-width: 480px) {
+    .terminal-container {
+        padding: var(--spacing-xs);
+    }
+
+    .terminal-window {
+        padding: var(--spacing-sm);
+        border-width: 1px;
+        border-radius: 6px;
+    }
+
+    .terminal-header {
+        margin-bottom: var(--spacing-sm);
+        padding-bottom: var(--spacing-sm);
+    }
+
+    .terminal-buttons {
+        gap: 4px;
+    }
+
+    .terminal-button {
+        width: 10px;
+        height: 10px;
+    }
+
+    .ascii-art {
+        font-size: 6px;
+        line-height: 1.1;
+    }
+
+    .terminal-output {
+        font-size: 12px;
+    }
+
+    .command-input {
+        font-size: 14px;
+        padding: var(--spacing-sm);
+    }
+}
+
+@media (max-width: 360px) {
+    .terminal-container {
+        padding: 4px;
+    }
+
+    .terminal-window {
+        padding: 8px;
+    }
+
+    .ascii-art {
+        font-size: 5px;
+    }
+
+    .nav-link {
+        font-size: 12px;
+        padding: var(--spacing-sm);
+    }
+}

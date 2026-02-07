@@ -1,0 +1,51 @@
+/* CipherText Component Styles */
+
+.cipher-text {
+    position: relative;
+    display: inline-block;
+    transition: all 0.3s ease;
+    cursor: help;
+}
+
+.cipher-text.encrypted {
+    color: var(--text-dim);
+    font-family: 'Courier New', monospace;
+    letter-spacing: 2px;
+    text-shadow: 0 0 5px rgba(46, 231, 255, 0.3);
+    filter: blur(1px);
+}
+
+.cipher-text.revealed {
+    color: var(--neon-cyan);
+    text-shadow: var(--glow-cyan);
+    filter: blur(0);
+    letter-spacing: normal;
+}
+
+.cipher-text.encrypted::before {
+    content: '🔒';
+    position: absolute;
+    left: -20px;
+    opacity: 0.5;
+    font-size: 0.8em;
+}
+
+.cipher-text.revealed::before {
+    content: '🔓';
+    opacity: 0.8;
+    animation: unlock 0.3s ease;
+}
+
+@keyframes unlock {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    50% {
+        transform: rotate(15deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
